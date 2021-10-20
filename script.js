@@ -1,4 +1,4 @@
-
+//XML HTTP 
 var xhr = new XMLHttpRequest();
 
 xhr.open("GET","https://jsonplaceholder.typicode.com/users");
@@ -22,3 +22,4 @@ xhr.onload=function(){
         console.log("Data not available");
     }
 }
+//
