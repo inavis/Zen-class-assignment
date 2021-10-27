@@ -1,0 +1,96 @@
+QUESTION:
+
+Execute the below code and write your description in txt file
+typeof(1)
+typeof(1.1)
+typeof('1.1')
+typeof(true)
+typeof(null)
+typeof(undefined)
+typeof([])
+typeof({})
+typeof(NaN)
+
+
+CODE:
+
+console.log(`typeof(1) is ${typeof(1)}`);
+console.log(`typeof(1.1) is ${typeof(1.1)}`);
+console.log(`typeof('1.1') is ${typeof('1.1')}`);
+console.log(`typeof(true) is ${typeof(true)}`);
+console.log(`typeof(null) is ${typeof(null)}`);
+console.log(`typeof(undefined) is ${typeof(undefined)}`);
+console.log(`typeof([]) is ${typeof([])}`);
+console.log(`typeof({}) is ${typeof({})}`);
+console.log(`typeof(NaN) is ${typeof(NaN)}`);
+ 
+OUTPUT:
+
+script.js:115 typeof(1) is number
+
+Explanation:
+Javascript does not have separate integer/float datatypes. All numbers are of type "number" in javascript.
+
+_________________________________________________________________________________________________________________
+
+script.js:116 typeof(1.1) is number
+
+Explanation:
+Javascript does not have separate integer/float datatypes. All numbers are of type "number" in javascript.
+
+__________________________________________________________________________________________________________________
+
+script.js:117 typeof('1.1') is string
+
+Explanation:
+Any value inside single quotes ('') or double quotes ("") is considered as a string in javascript.
+
+__________________________________________________________________________________________________________________
+
+script.js:118 typeof(true) is boolean
+
+Explanation:
+
+As boolean datatype is something which holds values either true of false , type of true is boolean.
+
+__________________________________________________________________________________________________________________
+
+script.js:119 typeof(null) is object
+
+Explanation:
+
+null is used to signify empty reference to object. null is the primitive value used to represent absence of any object value.
+The type tag for objects was 0. null was represented as the NULL pointer (0x00 in most platforms). Consequently, null had 0 as type tag, hence the "object" typeof return value.
+
+__________________________________________________________________________________________________________________
+
+script.js:120 typeof(undefined) is undefined
+
+Explanation:
+
+A variable that has not been assigned a value is of type undefined. 
+A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. 
+A function returns undefined if a value was not returned.
+So it is something which is not defined at all so type of undefined is also undefined.
+__________________________________________________________________________________________________________________
+
+script.js:121 typeof([]) is object
+
+Explanation:
+
+[] refers to  empty array.In javascript almost everything is an object. So array is also an object but with certain abilities and behaviours.
+
+__________________________________________________________________________________________________________________
+
+script.js:122 typeof({}) is object
+
+Explanation:
+
+{} refers to empty object. So it's type is object.
+__________________________________________________________________________________________________________________
+script.js:123 typeof(NaN) is number
+
+Explanation:
+
+Though NaN stands for Not a Number , it ia value of numeric data type(usually floating point). It usually represents result of invalid operations like divided by zero.
+As it is of numeric datatype it returns "number" for typeof(NaN).

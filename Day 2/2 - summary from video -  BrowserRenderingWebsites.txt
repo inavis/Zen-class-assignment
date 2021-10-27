@@ -1,0 +1,21 @@
+QUESTION:
+
+watch & summary 5 points - https://www.youtube.com/watch?v=SmE4OwHztCc&ab_channel=JSConf
+
+SUMMARY:
+
+HOW BROWSER RENDERS A WEBSITE:
+
+ 	While looking at the high level it includes stages of parsing , render/frame tree , layout , paint.
+
+ 	The first stage involves parsing which involves HTML parsing and CSS parsing .HTML parsing is forgiving by nature. Tokenizer operation is performed first and tthen parse tree is constructed from which DOM tree is constructed. It also has speculative parsing through which it will look ahead the external images , scripts , css present. It is also reentrant so the parsing process can be interrupted. Script  can halt the parser and can alter the document , also link and style could halt JS execution and can delay the process. So it is best practice to have script at bottom so that parsing will be uninterrupted and we also have defer(it will be executed only at last) and async(no change in order of execution but it will executed in a separate thread) attributes to determine it’s type of execution. In CSS parsing the CSS statements are converted to CSSOM.
+
+
+ 	The next stage is render/frame tree. It combines DOM and CSSOM object models and style resolution. It is actual representation of what will be displayed on screen. The combining process does not occur in parallel as it can vary depending on the javascript content present.
+It has multiple trees like render objects(has actual node that is reference to DOM) , render styles(styles that apply to DOM element ) , render layers (has layers for positioning like if absolute or has z-index ) ,  line boxes(wrapping text and layout them based on properties).
+Render tree will not include non-visual elements like head , title , script and nodes which are hidden with ‘display:none’
+
+ 	The next stage is layout. It is a recursive process as it traverses the render tree and gets nodes position , size and layouts it’s children. We have batch layout which is incremental and if any changes are made in render tree it is flagged as dirty and batch will traverse the tree and find all dirty trees and browser will make the changes. We also have immediate layout where it will re-layout the entire document like doing a change in font size or browser size. One best practice to follow is to perform all reads first and then perform writes.
+
+
+ 	Last stage is Paint. It is a incremental process where it creates layers from layed out render trees and builds up over 12 phases. In Render Layers step layers are created from render objects and it positions node , transparency , canvas , video etc. and a render layer can have multiple render objects. In Painting stage , it produces a bitmap from each layer and bitmap is uploaded to GPU as a texture and the texture is composited to final image and to be rendered on screen. Best practice includes using inline CSS as they can speed up first time paints and delta last bitmap is also helpful in browsers as it can map previous and present paint and map changes easily.
