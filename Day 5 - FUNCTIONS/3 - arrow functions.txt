@@ -1,0 +1,133 @@
+ARROW FUNCTIONS:
+
+QUESTION:
+
+Odd numbers in array
+
+CODE:
+
+odd = (arr) => {
+    let odd=[];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]%2 != 0){
+            odd.push(arr[i])
+        }
+    }
+    return odd;
+};
+console.log(`Odd numbers in array : ${odd([7,8,9,45,2345,23,788,10001]).join(" ")}`)
+
+OUTPUT:
+
+Odd numbers in array : 7 9 45 2345 23 10001
+
+=====================================================================================================
+
+QUESTION:
+
+Capital case for string array
+
+CODE:
+
+capital = (arr) =>{
+    let s = [];
+    for(let i=0;i<arr.length;i++){
+        arr[i] = arr[i].split('');
+        arr[i][0]=arr[i][0].toUpperCase();
+        arr[i]=arr[i].join('');
+        s.push(arr[i])
+    }
+    return s.join(" ");
+}
+console.log(`Capital case of string array : ${capital(["hello","i","am","coming"])}`)
+
+OUTPUT:
+
+Capital case of string array : Hello I Am Coming
+
+=====================================================================================================
+
+QUESTION:
+
+sum of numbers in a array
+
+CODE:
+
+sum = (arr) => {
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        sum+=arr[i]
+    }
+    console.log(`sum of numbers : ${sum}`);
+}
+sum([1,78,9,0,54]);
+
+
+
+OUTPUT:
+
+sum of numbers : 142
+
+=====================================================================================================
+
+QUESTION:
+
+prime numbers in a array
+
+
+CODE:
+
+prime = (arr) => {
+    let temp =[];
+    for(let i=0;i<arr.length;i++){
+        var flag=0;
+        if(arr[i]==1 ){
+            flag=1;
+        }else{
+        for(let j=2;j<arr[i];j++){
+            if(arr[i]%j===0){
+                flag=1;
+                break;
+            }
+        }
+        }
+        if(flag===0){temp.push(arr[i])}
+    }
+    console.log(`prime nos in array : ${temp.join(" ")}`)
+}
+prime([7,45,81,29,131,3,89])
+
+
+OUTPUT:
+
+prime nos in array : 7 29 131 3 89
+
+=====================================================================================================
+
+QUESTION:
+
+palindrome in a array
+
+CODE:
+
+
+palindrome = (arr) => {
+
+    let temp=[];
+    for(let i=0;i<arr.length;i++){
+        let s =arr[i].toString();
+        s= s.split('').reverse().join('');
+        if(s==arr[i]){
+            temp.push(arr[i])
+        }
+        
+    }
+    console.log(`palindrome nos in array : ${temp.join(" ")}`);
+}
+palindrome([121,789,789987,11,3343,777])
+
+OUTPUT:
+
+palindrome nos in array : 121 789987 11 777
+
+=====================================================================================================

@@ -1,0 +1,436 @@
+
+Do the below programs in anonymous function & IIFE
+
+QUESTION:
+
+
+
+Print odd numbers in an array
+
+
+ANONYMOUS FUNCTIONS:
+
+CODE:
+
+let odd = function(arr){
+    let odd=[];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]%2 != 0){
+            odd.push(arr[i])
+        }
+    }
+    return odd;
+};
+console.log(`odd numbers in array : ${odd([1,2,3,4,5,6])}`)
+
+OUTPUT:
+
+script.js:60 odd numbers in array : 1,3,5
+
+----------------------------------------------------------------------------
+
+IIFE:
+
+CODE:
+
+(function(arr){
+let odd=[];
+for(let i=0;i<arr.length;i++){
+    if(arr[i]%2 != 0){
+        odd.push(arr[i])
+    }
+}
+console.log(`odd elements in array : ${odd.join(" ")}`)
+})([78,79,81,22,34,57]);
+
+OUTPUT:
+
+odd elements in array : 79 81 57
+
+
+===========================================================================================================
+QUESTION:
+
+Convert all the strings to title caps in a string array
+
+ANONYMOUS FUNCTIONS:
+
+CODE:
+
+console.log("anonymous function --> Capital Case")
+let str = function(arr){
+    let s = [];
+    for(let i=0;i<arr.length;i++){
+        arr[i] = arr[i].split('');
+        arr[i][0]=arr[i][0].toUpperCase();
+        arr[i]=arr[i].join('');
+        s.push(arr[i])
+    }
+    return s.join(" ");
+};
+console.log(str(["i","am","doing","it"]));
+
+OUTPUT:
+
+script.js:62 anonymous function --> Capital Case
+script.js:73 I Am Doing It
+
+----------------------------------------------------------------------------
+
+IIFE:
+
+CODE:
+
+(function(arr){
+
+    let s = [];
+    for(let i=0;i<arr.length;i++){
+        arr[i] = arr[i].split('');
+        arr[i][0]=arr[i][0].toUpperCase();
+        arr[i]=arr[i].join('');
+        s.push(arr[i])
+    }
+    console.log(`Capital case: ${s.join(" ")}`)
+
+})(["see","you","soon"]);
+
+OUTPUT:
+
+Capital case: See You Soon
+
+===========================================================================================================
+QUESTION:
+
+Sum of all numbers in an array
+
+
+ANONYMOUS FUNCTIONS:
+
+CODE:
+
+let sum = function(arr){
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        sum+=arr[i]
+    }
+    console.log(`sum of numbers : ${sum}`);
+
+};
+sum([1,2,3,4,5,6]);
+
+OUTPUT:
+
+script.js:81 sum of numbers : 21
+
+----------------------------------------------------------------------------
+
+IIFE:
+
+CODE:
+
+(function(arr){
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        sum+=arr[i]
+    }
+    console.log(`sum of numbers : ${sum}`);
+})([10,20,30,40]);
+
+OUTPUT:
+
+sum of numbers : 100
+
+===========================================================================================================
+QUESTION:
+
+Return all the prime numbers in an array
+
+
+ANONYMOUS FUNCTIONS:
+
+CODE:
+
+let prime = function(arr){
+    let temp =[];
+    for(let i=0;i<arr.length;i++){
+        var flag=0;
+        if(arr[i]==1 ){
+            flag=1;
+        }else{
+        for(let j=2;j<arr[i];j++){
+            if(arr[i]%j===0){
+                flag=1;
+                break;
+            }
+        }
+        }
+        if(flag===0){temp.push(arr[i])}
+    }
+    console.log(`prime nos in array : ${temp.join(" ")}`)
+
+}
+prime([1,2,6,8,9,12,13,29,37]);
+
+
+OUTPUT:
+
+script.js:102 prime nos in array : 2 13 29 37
+
+----------------------------------------------------------------------------
+
+IIFE:
+
+CODE:
+
+(function(arr){
+let temp =[];
+    for(let i=0;i<arr.length;i++){
+        var flag=0;
+        if(arr[i]==1 ){
+            flag=1;
+        }else{
+        for(let j=2;j<arr[i];j++){
+            if(arr[i]%j===0){
+                flag=1;
+                break;
+            }
+        }
+        }
+        if(flag===0){temp.push(arr[i])}
+    }
+    console.log(`prime nos in array : ${temp.join(" ")}`)
+})([1,4,7,89,13,44,57,9]);
+
+
+OUTPUT:
+
+prime nos in array : 7 89 13
+
+===========================================================================================================
+QUESTION:
+
+Return all the palindromes in an array
+
+ANONYMOUS FUNCTIONS:
+
+CODE:
+
+let palindrome = function(arr){
+    let temp=[];
+    for(let i=0;i<arr.length;i++){
+        let s =arr[i].toString();
+        s= s.split('').reverse().join('');
+        if(s==arr[i]){
+            temp.push(arr[i])
+        }
+        
+    }
+    console.log(`palindrome nos in array : ${temp.join(" ")}`);
+};
+palindrome([121,789,33,918297,900,2332])
+
+OUTPUT:
+
+
+script.js:118 palindrome nos in array : 121 33 2332
+
+----------------------------------------------------------------------------
+
+IIFE:
+
+
+CODE:
+
+
+(function(arr){
+
+    let temp=[];
+    for(let i=0;i<arr.length;i++){
+        let s =arr[i].toString();
+        s= s.split('').reverse().join('');
+        if(s==arr[i]){
+            temp.push(arr[i])
+        }
+        
+    }
+    console.log(`palindrome nos in array : ${temp.join(" ")}`);
+
+})([121,789,34,33,6677,88757,98766789]);
+
+
+OUTPUT:
+
+palindrome nos in array : 121 33 98766789
+
+
+===========================================================================================================
+QUESTION:
+
+Return median of two  arrays of same size
+
+ANONYMOUS FUNCTIONS:
+
+CODE:
+
+
+let median = function(arr1,arr2){
+    let med1 = Math.floor(arr1.length/2);
+    let med2 = Math.floor(arr2.length/2);
+    let m1 ; 
+    let m2;
+    
+    if(arr1.length%2===0){
+        m1= (arr1[med1]+arr1[med1-1])/2
+    }else{
+        m1=(arr1[med1]);
+    }
+    if(arr2.length%2===0){
+        m2= (arr2[med2]+arr2[med2-1])/2
+    }else{
+        m2=(arr2[med2]);
+    }
+    console.log(`
+    median of first array : ${m1}
+    median of second array : ${m2}
+    `)
+
+};
+median([1,2,3,4,5,6],[1,2,3,4,5])
+median([2,3,4,5,6],[6,5,4,3,2,1])
+
+OUTPUT:
+
+script.js:139 
+    median of first array : 3.5
+    median of second array : 3
+
+script.js:139 
+    median of first array : 4
+    median of second array : 3.5
+
+----------------------------------------------------------------------------
+
+IIFE:
+
+
+CODE:
+
+(function(arr1,arr2){
+    let med1 = Math.floor(arr1.length/2);
+    let med2 = Math.floor(arr2.length/2);
+    let m1 ; 
+    let m2;
+    
+    if(arr1.length%2===0){
+        m1= (arr1[med1]+arr1[med1-1])/2
+    }else{
+        m1=(arr1[med1]);
+    }
+    if(arr2.length%2===0){
+        m2= (arr2[med2]+arr2[med2-1])/2
+    }else{
+        m2=(arr2[med2]);
+    }
+    console.log(`
+    median of first array : ${m1}
+    median of second array : ${m2}
+    `)
+})([1,2,3,4,5],[1,2,3,4,5,6]);
+
+
+OUTPUT:
+
+    median of first array : 3
+    median of second array : 3.5
+
+
+===========================================================================================================
+QUESTION:
+
+Remove duplicates from an array
+
+ANONYMOUS FUNCTIONS:
+
+CODE:
+
+let unique = function(arr){
+let s1 = new Set(arr);
+let str=[]
+s1.forEach(function(value){
+    str.push(value);
+});
+console.log(`array without repetitive elements: ${str}`)
+};
+unique([10,15,1,2,14,15,8,3,2,1,4,5])
+
+OUTPUT:
+
+script.js:155 array without repetitive elements: 10,15,1,2,14,8,3,4,5
+
+
+----------------------------------------------------------------------------
+
+IIFE:
+
+
+CODE:
+
+(function(arr){
+    let s1 = new Set(arr);
+    let str=[]
+    s1.forEach(function(value){
+        str.push(value);
+    });
+    console.log(`array without repetitive elements: ${str}`)
+})([2,3,4,2,3,7,9,7,7]);
+
+OUTPUT:
+
+array without repetitive elements: 2,3,4,7,9
+
+
+===========================================================================================================
+QUESTION:
+
+Rotate an array by k times
+
+
+ANONYMOUS FUNCTIONS:
+
+CODE:
+
+let rotate = function(arr,k){
+let temp=[];
+for(let i=0;i<k;i++){
+    temp.push(arr.pop());
+}
+arr = temp.reverse().concat(arr)
+console.log(`Rotating array by ${k} times : ${arr}`)
+}
+rotate([1,2,3,4,5],2)
+
+OUTPUT:
+
+script.js:166 Rotating array by 2 times : 4,5,1,2,3
+
+
+----------------------------------------------------------------------------
+
+IIFE:
+
+CODE:
+
+(function(arr,k){
+    let temp=[];
+    for(let i=0;i<k;i++){
+        temp.push(arr.pop());
+    }
+    arr = temp.reverse().concat(arr)
+    console.log(`Rotating array by ${k} times : ${arr}`)
+})([9,8,7,6,5,4,3,2,1],4);
+
+OUTPUT:
+
+Rotating array by 4 times : 4,3,2,1,9,8,7,6,5
+
+===========================================================================================================
