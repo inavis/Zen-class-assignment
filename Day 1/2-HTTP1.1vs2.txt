@@ -1,0 +1,30 @@
+HTTP (Hyper Text Transfer Protocol):
+
+HTTP is a  communications protocol used to connect to Web servers on the Internet or on a local network (intranet). The primary function of HTTP is to establish a connection with the server and send HTML pages back to the user's browser. 
+It has went through development of different versions. HTTP/1.1, the first standardized version of HTTP, was introduced in 1997. It presented significant performance optimizations (over HTTP/0.9 and HTTP/1.0). HTTP/2  was introduced in 2015, which is based on the SPDY protocol from google. It is much more efficient than HTTP/1.1.
+
+
+
+
+DIFFERENCES BETWEEN HTTP/1.1 and HTTP/2:
+
+Connection:
+HTTP/1.1 supports connection reuse using keep alive header, so for every TCP connection there could be multiple requests and response. It also supported pipelining a feature where second request can be sent before response of previous request is served , but it is difficult to implement it due to issues like head-of-line-blocking (performance-limiting phenomenon that occurs when a line of packets is held up by the first packet).
+HTTP/2 supports multiplexing , through which we can send multiple streams of data at once in a single TCP connection and the messages will have numbering. 
+
+Request and response format:
+HTTP/1.1 has all request and response in plain text format .
+HTTP/2 uses binary framing layer. This divides the messages into frames based on their type. This binary encoded frames are tagged .These identifying tags helps the connection to interleave these frames during transfer and reassemble at the end. This increases the flexibility in data transfer and multiplexing feature(easy to send multiple streams of data without worrying about ordering).
+
+Prioritization:
+ Prioritization refers to the order in which pieces of content are loaded. It affects a webpage's load time. For example If we have a large  file and if it loads first it will block rest of the page from loading. In HTTP/2 we have  a feature called weighed prioritization through which we can decide the order for elements of page to load. So in multiplexing for data streams we can assign different weighed values.
+ But this is not possible in HTTP/1.1.
+
+
+Data Loading:
+In HTTP/1.1 the server serves the data only if client requests for it.
+ HTTP/2 involves a feature called Server push in which the required resources are pushed to the client before making requests. Server also informs client on which data will be pushed.
+Header Compression:
+Header compression is present in both HTTP/1.1 and HTTP/2 to improve performance.
+ HTTP/2 uses more advanced compression called HPACK which is  resilient to attacks like CRIME and uses static Huffman encoding. It eliminates redundant information in HTTP header packets leading to faster loading of web pages.
+
