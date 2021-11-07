@@ -1,0 +1,173 @@
+QUESTION:
+
+write a class to calculate uber price.
+
+CODE:
+
+
+
+class Uber{
+
+    constructor(distance,expectedtime,actualtime,tolls,demand,harshweather,waitingtime,vehicletype){
+        this.distance = distance/1000;
+        this.expectedtime = expectedtime;
+        this.actualtime= actualtime;
+        this.tolls = tolls;
+        this.demand = demand;
+        this.waitingtime = waitingtime;
+        this.vehicletype = vehicletype;
+        this.harshweather = harshweather;
+    }
+
+    calculateFare(){
+        let fare =0;
+        let type =["auto","prime","suv","sedan","pool"]
+        let ind = type.indexOf(this.vehicletype.toLowerCase());
+        //console.log(ind)
+       
+        //DETERMINED BASED ON THE VEHICLE TYPE
+
+        //basic calculation
+        if(this.distance<=5 ){
+            switch(ind){
+                case 0:
+                    fare = 20; break;
+                case 1:
+                    fare = 40; break;
+                case 2:
+                    fare = 60; break;
+                case 3:
+                    fare = 50; break;
+                case 4:
+                    fare = 30; break;
+            }
+
+        }
+        else if(this.distance<=10 ){
+            switch(ind){
+                case 0:
+                    fare = 80; break;
+                case 1:
+                    fare = 110; break;
+                case 2:
+                    fare = 140; break;
+                case 3:
+                    fare = 125; break;
+                case 4:
+                    fare = 90; break;
+            }
+        }else if(this.distance>=11 && this.distance<=25 ){
+
+            switch(ind){
+                case 0:
+                    fare = 150; break;
+                case 1:
+                    fare = 175; break;
+                case 2:
+                    fare = 250; break;
+                case 3:
+                    fare = 220; break;
+                case 4:
+                    fare = 200; break;
+            }
+
+        }else{
+            let additional;
+            this.distance =this.distance-25;
+            switch(ind){
+                case 0:
+                    fare = 170; additional = 5; break;
+                case 1:
+                    fare = 195; additional = 7; break;
+                case 2:
+                    fare = 270; additional = 10; break;
+                case 3:
+                    fare = 240; additional = 9; break;
+                case 4:
+                    fare = 220; additional = 6; break;
+            }
+            while(this.distance>0){
+                fare+=additional;
+                this.distance-=1
+            }
+        }
+        console.log(`Based on distance the base price is ${fare}`);
+
+         //for tolls
+         if(this.vehicletype!="auto"){
+         while(this.tolls>0){
+            fare+=20;
+            this.tolls-=1;
+        }
+        console.log(`Based on tolls during the ride , the  price is ${fare}`);
+    }
+        
+        
+        //demand or harsh weather
+        if(this.demand === true || this.harshweather === true){
+            fare = fare + Math.ceil(fare/2);
+            console.log(`Based on demand/bad weather during the ride , the  price is ${fare}`);
+        }
+        else{
+        //if actual time > expected time
+        this.actualtime = this.actualtime + this.waitingtime;
+        if(this.vehicletype.toLowerCase()!="pool"){
+        if(this.expectedtime<this.actualtime){
+           // console.log(this.expectedtime+">"+this.actualtime)
+            let diff = this.actualtime-this.expectedtime;
+            if(diff>0 && diff<=17){
+                fare = fare+20
+            }
+            else if(diff>=18 && diff <=38){
+                fare=fare + 40;
+            }else{
+                let additional;
+                switch(ind){
+                    case 0:
+                        additional = 12; break;
+                    case 1:
+                        additional = 14; break;
+                    case 2:
+                        additional = 18; break;
+                    case 3:
+                        additional = 16; break;
+                }
+                while(diff>0){
+                    fare = fare + additional;
+                    diff = diff - 15;
+                }
+            }
+        }
+    }
+        console.log(`Based on waiting time / greater ride time than expected  , the  price is ${fare}`);
+        }
+       
+    }
+}
+
+//Based on vehicle type and different distance ranges  -> a price is calculated
+//Except auto for other vehicle type based on number of tolls amount is added.
+//Based on v demand or harsh weather -> half amount from previous calculate amount  is added
+//Except pool according to vehicle type if expected time < actual time -> additional amount is added
+
+
+////distance in meters ,expectedtime,actualtime,tolls,demand,harshweather,waitingtime,vehicletype -> INPUT 
+let travel1 = new Uber(34000,20,60,2,true,false,3,"suv")
+travel1.calculateFare();
+
+let travel2 = new Uber(5000,15,12,2,false,false,15,"auto");
+travel2.calculateFare();
+
+
+
+OUTPUT:
+
+
+Based on distance the base price is 360
+Based on tolls during the ride , the  price is 400
+Based on demand/bad weather during the ride , the  price is 600
+
+
+
+Based on distance the base price is 20
+Based on waiting time / greater ride time than expected  , the  price is 40

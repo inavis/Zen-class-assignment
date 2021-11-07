@@ -1,0 +1,71 @@
+QUESTION:
+
+https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+
+Circle - Class
+Convert the UML diagram to Typescript class. - use number for double
+
+
+CODE:
+
+
+class Circle{
+
+    constructor(radius , color){
+        this.radius = radius;
+        this.color = color;
+    }
+    setRadius(radius){
+        this.radius = radius;
+    }
+    setColor(color){
+        this.color = color;
+    }
+    getRadius(){
+        return this.radius;
+    }
+    getColor(){
+        return this.color;
+    }
+
+    getArea(){
+        return `Area of circle is ${(3.14*this.getRadius()*this.getRadius()).toFixed(3)}`
+    }
+    getCircumference(){
+        return `Circumference of circle is ${(2*3.14*this.getRadius()).toFixed(3)}`
+    }
+
+    toString(){
+        let str =  `Circle[ radius : ${this.getRadius()} , color : ${this.getColor()}]`;
+        //console.log(typeof(str))
+        return str;
+    }
+}
+
+let circle1 = new Circle();
+let circle2 = new Circle(2.6);
+let circle3 = new Circle(7.11 , "black");
+
+//console.log(circle1,circle2,circle3);
+// Circle {radius: undefined, color: undefined} Circle {radius: 2.6, color: undefined} Circle {radius: 7.11, color: 'black'}
+
+circle1.setRadius("1.0");
+circle1.setColor("red");
+circle2.setColor("yellow");
+
+
+console.log(circle1.toString());
+
+console.log(circle2.getArea());
+console.log(circle2.getCircumference());
+
+
+OUTPUT:
+
+Circle[ radius : 1.0 , color : red]
+
+Area of circle is 21.226
+
+Circumference of circle is 16.328
+
+

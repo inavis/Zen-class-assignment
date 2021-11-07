@@ -1,0 +1,121 @@
+QUESTION:
+
+Write a “person” class to hold all the details.
+
+CODE:
+
+class Person {
+
+    constructor(id,name,age,phone,email, address,profession,officeaddress,officenumber){
+    
+        this.id = id;
+        this.name=name;
+        this.age=age;
+        this.phone=phone;
+        this.email=email;
+        this.address = address;
+        this.profession=profession;
+        this.officeaddress=officeaddress;
+        this.officenumber = officenumber;
+    }
+
+    //SETTER METHODS
+    setId(id){this.id = id}
+    setName(name){this.name = name}
+    setAge(age){this.age=age}
+    setPhone(phone){this.phone=phone}
+    setEmail(email){this.email = email}
+    setProfession(profession){this.profession=profession}
+    setAddress(number,street,city,pincode,state,country){
+        this.address = {number:number,street:street,city:city,pincode:pincode,state:state,country:country};
+    }
+    setOfficeaddress(number,street,city,pincode,state,country){
+        this.officeaddress = {number:number,street:street,city:city,pincode:pincode,state:state,country:country};
+    }
+    setOfficenumber(officenumber){this.officenumber = officenumber}
+
+    //GETTER METHODS
+    getId(){return this.id}
+    getName(){return this.name}
+    getAge(){return this.age}
+    getPhone(){return this.phone}
+    getEmail(){return this.email}
+    getProfession(){return this.profession}
+    getAddress(){return this.address}
+    getOfficeaddress(){return this.officeaddress}
+    getOfficenumber(){return this.officenumber}
+    
+    printDetails(){
+        console.log(`
+        Details of Person
+        ================================================================
+        id: ${this.getId()}
+        Name: ${this.getName()}
+        Age: ${this.getAge()}
+        phone : ${this.getPhone()}
+        email : ${this.getEmail()}
+        Home address : ${this.getAddress().number}, ${this.getAddress().street} ,${this.getAddress().city} - ${this.getAddress().pincode}, ${this.getAddress().state}, ${this.getAddress().country}.
+        Profession : ${this.getProfession()}
+        Office Address : ${this.getOfficeaddress().number}, ${this.getOfficeaddress().street} , ${this.getOfficeaddress().city} - ${this.getOfficeaddress().pincode}, ${this.getOfficeaddress().state}, ${this.getOfficeaddress().country}.
+        Office Number : ${this.getOfficenumber()}
+        `)
+    }
+
+
+}
+
+
+//OBJECT USING CONSTRUCTOR
+let person1 =  new Person("KHG2827","Ash Kutch",39,"87287826376","abc@gmail.com",{number:"17",street:"RK Nagar",city:"chennai",pincode:"600073",state:"TN",country:"India"},"Engineer",{number:"IT PARK-1",street:"Street1",city:"chennai",pincode:"600119",state:"TN",country:"India"},"93839282928929");
+person1.printDetails()
+
+
+// using setter methods to define properties
+let person2 = new Person();
+person2.setId("kijkjh878");
+person2.setName("Bob Mark");
+person2.setAge(77);
+person2.setPhone("82927272782");
+person2.setEmail("msija@gmail.com");
+person2.setProfession("Doctor");
+person2.setAddress("7 , J House","Flower Street","Bamgalore","123456","Karnataka","India");
+person2.setOfficeaddress("J Hosppital","Busy Street","Bangalore","987654","Karnataka","India");
+person2.setOfficenumber("044 22272968");
+
+person2.printDetails();
+
+
+
+
+
+OUTPUT:
+
+
+  	Details of Person
+        ================================================================
+        id: KHG2827
+        Name: Ash Kutch
+        Age: 39
+        phone : 87287826376
+        email : abc@gmail.com
+        Home address : 17, RK Nagar ,chennai - 600073, TN, India.
+        Profession : Engineer
+        Office Address : IT PARK-1, Street1 , chennai - 600119, TN, India.
+        Office Number : 93839282928929
+
+
+
+
+        Details of Person
+        ================================================================
+        id: kijkjh878
+        Name: Bob Mark
+        Age: 77
+        phone : 82927272782
+        email : msija@gmail.com
+        Home address : 7 , J House, Flower Street ,Bamgalore - 123456, Karnataka, India.
+        Profession : Doctor
+        Office Address : J Hosppital, Busy Street , Bangalore - 987654, Karnataka, India.
+        Office Number : 044 22272968
+        
+       
