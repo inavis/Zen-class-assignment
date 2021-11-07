@@ -1,0 +1,1282 @@
+QUESTION:
+
+Use the same rest countries and print all countries name, region, sub region and population
+
+==================================================================================================
+CODE:
+
+var xhr = new XMLHttpRequest();
+
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.send();
+
+xhr.onload = function(){
+    if(xhr.status>=200 && xhr.status<300){
+        let data = JSON.parse(this.response);
+        //console.log(data);
+        for(let x of data){
+            console.log(`
+                Country name : ${x.name}
+                Country sub-region: ${x.subregion}
+                Country population :${x.population}
+            `)
+        }
+    }else{
+        console.log("Data not found");
+    }
+};
+
+
+==================================================================================================
+OUTPUT:
+
+script.js:11 
+                Country name : Afghanistan
+                Country sub-region: Southern Asia
+                Country population :27657145
+            
+script.js:11 
+                Country name : Åland Islands
+                Country sub-region: Northern Europe
+                Country population :28875
+            
+script.js:11 
+                Country name : Albania
+                Country sub-region: Southern Europe
+                Country population :2886026
+            
+script.js:11 
+                Country name : Algeria
+                Country sub-region: Northern Africa
+                Country population :40400000
+            
+script.js:11 
+                Country name : American Samoa
+                Country sub-region: Polynesia
+                Country population :57100
+            
+script.js:11 
+                Country name : Andorra
+                Country sub-region: Southern Europe
+                Country population :78014
+            
+script.js:11 
+                Country name : Angola
+                Country sub-region: Middle Africa
+                Country population :25868000
+            
+script.js:11 
+                Country name : Anguilla
+                Country sub-region: Caribbean
+                Country population :13452
+            
+script.js:11 
+                Country name : Antarctica
+                Country sub-region: 
+                Country population :1000
+            
+script.js:11 
+                Country name : Antigua and Barbuda
+                Country sub-region: Caribbean
+                Country population :86295
+            
+script.js:11 
+                Country name : Argentina
+                Country sub-region: South America
+                Country population :43590400
+            
+script.js:11 
+                Country name : Armenia
+                Country sub-region: Western Asia
+                Country population :2994400
+            
+script.js:11 
+                Country name : Aruba
+                Country sub-region: Caribbean
+                Country population :107394
+            
+script.js:11 
+                Country name : Australia
+                Country sub-region: Australia and New Zealand
+                Country population :24117360
+            
+script.js:11 
+                Country name : Austria
+                Country sub-region: Western Europe
+                Country population :8725931
+            
+script.js:11 
+                Country name : Azerbaijan
+                Country sub-region: Western Asia
+                Country population :9730500
+            
+script.js:11 
+                Country name : Bahamas
+                Country sub-region: Caribbean
+                Country population :378040
+            
+​ 
+                Country name : Bahrain
+                Country sub-region: Western Asia
+                Country population :1404900
+            
+​ 
+                Country name : Bangladesh
+                Country sub-region: Southern Asia
+                Country population :161006790
+            
+​ 
+                Country name : Barbados
+                Country sub-region: Caribbean
+                Country population :285000
+            
+​ 
+                Country name : Belarus
+                Country sub-region: Eastern Europe
+                Country population :9498700
+            
+​ 
+                Country name : Belgium
+                Country sub-region: Western Europe
+                Country population :11319511
+            
+​ 
+                Country name : Belize
+                Country sub-region: Central America
+                Country population :370300
+            
+​ 
+                Country name : Benin
+                Country sub-region: Western Africa
+                Country population :10653654
+            
+​ 
+                Country name : Bermuda
+                Country sub-region: Northern America
+                Country population :61954
+            
+​ 
+                Country name : Bhutan
+                Country sub-region: Southern Asia
+                Country population :775620
+            
+​ 
+                Country name : Bolivia (Plurinational State of)
+                Country sub-region: South America
+                Country population :10985059
+            
+​ 
+                Country name : Bonaire, Sint Eustatius and Saba
+                Country sub-region: Caribbean
+                Country population :17408
+            
+​ 
+                Country name : Bosnia and Herzegovina
+                Country sub-region: Southern Europe
+                Country population :3531159
+            
+​ 
+                Country name : Botswana
+                Country sub-region: Southern Africa
+                Country population :2141206
+            
+​ 
+                Country name : Bouvet Island
+                Country sub-region: 
+                Country population :0
+            
+​ 
+                Country name : Brazil
+                Country sub-region: South America
+                Country population :206135893
+            
+​ 
+                Country name : British Indian Ocean Territory
+                Country sub-region: Eastern Africa
+                Country population :3000
+            
+​ 
+                Country name : United States Minor Outlying Islands
+                Country sub-region: Northern America
+                Country population :300
+            
+​ 
+                Country name : Virgin Islands (British)
+                Country sub-region: Caribbean
+                Country population :28514
+            
+​ 
+                Country name : Virgin Islands (U.S.)
+                Country sub-region: Caribbean
+                Country population :114743
+            
+​ 
+                Country name : Brunei Darussalam
+                Country sub-region: South-Eastern Asia
+                Country population :411900
+            
+​ 
+                Country name : Bulgaria
+                Country sub-region: Eastern Europe
+                Country population :7153784
+            
+​ 
+                Country name : Burkina Faso
+                Country sub-region: Western Africa
+                Country population :19034397
+            
+​ 
+                Country name : Burundi
+                Country sub-region: Eastern Africa
+                Country population :10114505
+            
+​ 
+                Country name : Cambodia
+                Country sub-region: South-Eastern Asia
+                Country population :15626444
+            
+​ 
+                Country name : Cameroon
+                Country sub-region: Middle Africa
+                Country population :22709892
+            
+​ 
+                Country name : Canada
+                Country sub-region: Northern America
+                Country population :36155487
+            
+​ 
+                Country name : Cabo Verde
+                Country sub-region: Western Africa
+                Country population :531239
+            
+​ 
+                Country name : Cayman Islands
+                Country sub-region: Caribbean
+                Country population :58238
+            
+​ 
+                Country name : Central African Republic
+                Country sub-region: Middle Africa
+                Country population :4998000
+            
+​ 
+                Country name : Chad
+                Country sub-region: Middle Africa
+                Country population :14497000
+            
+​ 
+                Country name : Chile
+                Country sub-region: South America
+                Country population :18191900
+            
+​ 
+                Country name : China
+                Country sub-region: Eastern Asia
+                Country population :1377422166
+            
+​ 
+                Country name : Christmas Island
+                Country sub-region: Australia and New Zealand
+                Country population :2072
+            
+​ 
+                Country name : Cocos (Keeling) Islands
+                Country sub-region: Australia and New Zealand
+                Country population :550
+            
+​ 
+                Country name : Colombia
+                Country sub-region: South America
+                Country population :48759958
+            
+​ 
+                Country name : Comoros
+                Country sub-region: Eastern Africa
+                Country population :806153
+            
+​ 
+                Country name : Congo
+                Country sub-region: Middle Africa
+                Country population :4741000
+            
+​ 
+                Country name : Congo (Democratic Republic of the)
+                Country sub-region: Middle Africa
+                Country population :85026000
+            
+​ 
+                Country name : Cook Islands
+                Country sub-region: Polynesia
+                Country population :18100
+            
+​ 
+                Country name : Costa Rica
+                Country sub-region: Central America
+                Country population :4890379
+            
+​ 
+                Country name : Croatia
+                Country sub-region: Southern Europe
+                Country population :4190669
+            
+​ 
+                Country name : Cuba
+                Country sub-region: Caribbean
+                Country population :11239004
+            
+​ 
+                Country name : Curaçao
+                Country sub-region: Caribbean
+                Country population :154843
+            
+​ 
+                Country name : Cyprus
+                Country sub-region: Southern Europe
+                Country population :847000
+            
+​ 
+                Country name : Czech Republic
+                Country sub-region: Eastern Europe
+                Country population :10558524
+            
+​ 
+                Country name : Denmark
+                Country sub-region: Northern Europe
+                Country population :5717014
+            
+​ 
+                Country name : Djibouti
+                Country sub-region: Eastern Africa
+                Country population :900000
+            
+​ 
+                Country name : Dominica
+                Country sub-region: Caribbean
+                Country population :71293
+            
+​ 
+                Country name : Dominican Republic
+                Country sub-region: Caribbean
+                Country population :10075045
+            
+​ 
+                Country name : Ecuador
+                Country sub-region: South America
+                Country population :16545799
+            
+​ 
+                Country name : Egypt
+                Country sub-region: Northern Africa
+                Country population :91290000
+            
+​ 
+                Country name : El Salvador
+                Country sub-region: Central America
+                Country population :6520675
+            
+​ 
+                Country name : Equatorial Guinea
+                Country sub-region: Middle Africa
+                Country population :1222442
+            
+​ 
+                Country name : Eritrea
+                Country sub-region: Eastern Africa
+                Country population :5352000
+            
+​ 
+                Country name : Estonia
+                Country sub-region: Northern Europe
+                Country population :1315944
+            
+​ 
+                Country name : Ethiopia
+                Country sub-region: Eastern Africa
+                Country population :92206005
+            
+​ 
+                Country name : Falkland Islands (Malvinas)
+                Country sub-region: South America
+                Country population :2563
+            
+​ 
+                Country name : Faroe Islands
+                Country sub-region: Northern Europe
+                Country population :49376
+            
+​ 
+                Country name : Fiji
+                Country sub-region: Melanesia
+                Country population :867000
+            
+​ 
+                Country name : Finland
+                Country sub-region: Northern Europe
+                Country population :5491817
+            
+​ 
+                Country name : France
+                Country sub-region: Western Europe
+                Country population :66710000
+            
+​ 
+                Country name : French Guiana
+                Country sub-region: South America
+                Country population :254541
+            
+​ 
+                Country name : French Polynesia
+                Country sub-region: Polynesia
+                Country population :271800
+            
+​ 
+                Country name : French Southern Territories
+                Country sub-region: Southern Africa
+                Country population :140
+            
+​ 
+                Country name : Gabon
+                Country sub-region: Middle Africa
+                Country population :1802278
+            
+​ 
+                Country name : Gambia
+                Country sub-region: Western Africa
+                Country population :1882450
+            
+​ 
+                Country name : Georgia
+                Country sub-region: Western Asia
+                Country population :3720400
+            
+​ 
+                Country name : Germany
+                Country sub-region: Western Europe
+                Country population :81770900
+            
+​ 
+                Country name : Ghana
+                Country sub-region: Western Africa
+                Country population :27670174
+            
+​ 
+                Country name : Gibraltar
+                Country sub-region: Southern Europe
+                Country population :33140
+            
+​ 
+                Country name : Greece
+                Country sub-region: Southern Europe
+                Country population :10858018
+            
+​ 
+                Country name : Greenland
+                Country sub-region: Northern America
+                Country population :55847
+            
+​ 
+                Country name : Grenada
+                Country sub-region: Caribbean
+                Country population :103328
+            
+​ 
+                Country name : Guadeloupe
+                Country sub-region: Caribbean
+                Country population :400132
+            
+​ 
+                Country name : Guam
+                Country sub-region: Micronesia
+                Country population :184200
+            
+​ 
+                Country name : Guatemala
+                Country sub-region: Central America
+                Country population :16176133
+            
+​ 
+                Country name : Guernsey
+                Country sub-region: Northern Europe
+                Country population :62999
+            
+​ 
+                Country name : Guinea
+                Country sub-region: Western Africa
+                Country population :12947000
+            
+​ 
+                Country name : Guinea-Bissau
+                Country sub-region: Western Africa
+                Country population :1547777
+            
+​ 
+                Country name : Guyana
+                Country sub-region: South America
+                Country population :746900
+            
+​ 
+                Country name : Haiti
+                Country sub-region: Caribbean
+                Country population :11078033
+            
+​ 
+                Country name : Heard Island and McDonald Islands
+                Country sub-region: 
+                Country population :0
+            
+​ 
+                Country name : Holy See
+                Country sub-region: Southern Europe
+                Country population :451
+            
+​ 
+                Country name : Honduras
+                Country sub-region: Central America
+                Country population :8576532
+            
+​ 
+                Country name : Hong Kong
+                Country sub-region: Eastern Asia
+                Country population :7324300
+            
+​ 
+                Country name : Hungary
+                Country sub-region: Eastern Europe
+                Country population :9823000
+            
+​ 
+                Country name : Iceland
+                Country sub-region: Northern Europe
+                Country population :334300
+            
+​ 
+                Country name : India
+                Country sub-region: Southern Asia
+                Country population :1295210000
+            
+​ 
+                Country name : Indonesia
+                Country sub-region: South-Eastern Asia
+                Country population :258705000
+            
+​ 
+                Country name : Côte d'Ivoire
+                Country sub-region: Western Africa
+                Country population :22671331
+            
+​ 
+                Country name : Iran (Islamic Republic of)
+                Country sub-region: Southern Asia
+                Country population :79369900
+            
+​ 
+                Country name : Iraq
+                Country sub-region: Western Asia
+                Country population :37883543
+            
+​ 
+                Country name : Ireland
+                Country sub-region: Northern Europe
+                Country population :6378000
+            
+​ 
+                Country name : Isle of Man
+                Country sub-region: Northern Europe
+                Country population :84497
+            
+​ 
+                Country name : Israel
+                Country sub-region: Western Asia
+                Country population :8527400
+            
+​ 
+                Country name : Italy
+                Country sub-region: Southern Europe
+                Country population :60665551
+            
+​ 
+                Country name : Jamaica
+                Country sub-region: Caribbean
+                Country population :2723246
+            
+​ 
+                Country name : Japan
+                Country sub-region: Eastern Asia
+                Country population :126960000
+            
+​ 
+                Country name : Jersey
+                Country sub-region: Northern Europe
+                Country population :100800
+            
+​ 
+                Country name : Jordan
+                Country sub-region: Western Asia
+                Country population :9531712
+            
+​ 
+                Country name : Kazakhstan
+                Country sub-region: Central Asia
+                Country population :17753200
+            
+​ 
+                Country name : Kenya
+                Country sub-region: Eastern Africa
+                Country population :47251000
+            
+​ 
+                Country name : Kiribati
+                Country sub-region: Micronesia
+                Country population :113400
+            
+​ 
+                Country name : Kuwait
+                Country sub-region: Western Asia
+                Country population :4183658
+            
+​ 
+                Country name : Kyrgyzstan
+                Country sub-region: Central Asia
+                Country population :6047800
+            
+​ 
+                Country name : Lao People's Democratic Republic
+                Country sub-region: South-Eastern Asia
+                Country population :6492400
+            
+​ 
+                Country name : Latvia
+                Country sub-region: Northern Europe
+                Country population :1961600
+            
+​ 
+                Country name : Lebanon
+                Country sub-region: Western Asia
+                Country population :5988000
+            
+​ 
+                Country name : Lesotho
+                Country sub-region: Southern Africa
+                Country population :1894194
+            
+​ 
+                Country name : Liberia
+                Country sub-region: Western Africa
+                Country population :4615000
+            
+​ 
+                Country name : Libya
+                Country sub-region: Northern Africa
+                Country population :6385000
+            
+​ 
+                Country name : Liechtenstein
+                Country sub-region: Western Europe
+                Country population :37623
+            
+​ 
+                Country name : Lithuania
+                Country sub-region: Northern Europe
+                Country population :2872294
+            
+​ 
+                Country name : Luxembourg
+                Country sub-region: Western Europe
+                Country population :576200
+            
+​ 
+                Country name : Macao
+                Country sub-region: Eastern Asia
+                Country population :649100
+            
+​ 
+                Country name : Macedonia (the former Yugoslav Republic of)
+                Country sub-region: Southern Europe
+                Country population :2058539
+            
+​ 
+                Country name : Madagascar
+                Country sub-region: Eastern Africa
+                Country population :22434363
+            
+​ 
+                Country name : Malawi
+                Country sub-region: Eastern Africa
+                Country population :16832910
+            
+​ 
+                Country name : Malaysia
+                Country sub-region: South-Eastern Asia
+                Country population :31405416
+            
+​ 
+                Country name : Maldives
+                Country sub-region: Southern Asia
+                Country population :344023
+            
+​ 
+                Country name : Mali
+                Country sub-region: Western Africa
+                Country population :18135000
+            
+​ 
+                Country name : Malta
+                Country sub-region: Southern Europe
+                Country population :425384
+            
+​ 
+                Country name : Marshall Islands
+                Country sub-region: Micronesia
+                Country population :54880
+            
+​ 
+                Country name : Martinique
+                Country sub-region: Caribbean
+                Country population :378243
+            
+​ 
+                Country name : Mauritania
+                Country sub-region: Western Africa
+                Country population :3718678
+            
+​ 
+                Country name : Mauritius
+                Country sub-region: Eastern Africa
+                Country population :1262879
+            
+​ 
+                Country name : Mayotte
+                Country sub-region: Eastern Africa
+                Country population :226915
+            
+​ 
+                Country name : Mexico
+                Country sub-region: Central America
+                Country population :122273473
+            
+​ 
+                Country name : Micronesia (Federated States of)
+                Country sub-region: Micronesia
+                Country population :102800
+            
+​ 
+                Country name : Moldova (Republic of)
+                Country sub-region: Eastern Europe
+                Country population :3553100
+            
+​ 
+                Country name : Monaco
+                Country sub-region: Western Europe
+                Country population :38400
+            
+​ 
+                Country name : Mongolia
+                Country sub-region: Eastern Asia
+                Country population :3093100
+            
+​ 
+                Country name : Montenegro
+                Country sub-region: Southern Europe
+                Country population :621810
+            
+​ 
+                Country name : Montserrat
+                Country sub-region: Caribbean
+                Country population :4922
+            
+​ 
+                Country name : Morocco
+                Country sub-region: Northern Africa
+                Country population :33337529
+            
+​ 
+                Country name : Mozambique
+                Country sub-region: Eastern Africa
+                Country population :26423700
+            
+​ 
+                Country name : Myanmar
+                Country sub-region: South-Eastern Asia
+                Country population :51419420
+            
+​ 
+                Country name : Namibia
+                Country sub-region: Southern Africa
+                Country population :2324388
+            
+​ 
+                Country name : Nauru
+                Country sub-region: Micronesia
+                Country population :10084
+            
+​ 
+                Country name : Nepal
+                Country sub-region: Southern Asia
+                Country population :28431500
+            
+​ 
+                Country name : Netherlands
+                Country sub-region: Western Europe
+                Country population :17019800
+            
+​ 
+                Country name : New Caledonia
+                Country sub-region: Melanesia
+                Country population :268767
+            
+​ 
+                Country name : New Zealand
+                Country sub-region: Australia and New Zealand
+                Country population :4697854
+            
+​ 
+                Country name : Nicaragua
+                Country sub-region: Central America
+                Country population :6262703
+            
+​ 
+                Country name : Niger
+                Country sub-region: Western Africa
+                Country population :20715000
+            
+​ 
+                Country name : Nigeria
+                Country sub-region: Western Africa
+                Country population :186988000
+            
+​ 
+                Country name : Niue
+                Country sub-region: Polynesia
+                Country population :1470
+            
+​ 
+                Country name : Norfolk Island
+                Country sub-region: Australia and New Zealand
+                Country population :2302
+            
+​ 
+                Country name : Korea (Democratic People's Republic of)
+                Country sub-region: Eastern Asia
+                Country population :25281000
+            
+​ 
+                Country name : Northern Mariana Islands
+                Country sub-region: Micronesia
+                Country population :56940
+            
+​ 
+                Country name : Norway
+                Country sub-region: Northern Europe
+                Country population :5223256
+            
+​ 
+                Country name : Oman
+                Country sub-region: Western Asia
+                Country population :4420133
+            
+​ 
+                Country name : Pakistan
+                Country sub-region: Southern Asia
+                Country population :194125062
+            
+script.js:11 
+                Country name : Palau
+                Country sub-region: Micronesia
+                Country population :17950
+            
+script.js:11 
+                Country name : Palestine, State of
+                Country sub-region: Western Asia
+                Country population :4682467
+            
+script.js:11 
+                Country name : Panama
+                Country sub-region: Central America
+                Country population :3814672
+            
+script.js:11 
+                Country name : Papua New Guinea
+                Country sub-region: Melanesia
+                Country population :8083700
+            
+script.js:11 
+                Country name : Paraguay
+                Country sub-region: South America
+                Country population :6854536
+            
+script.js:11 
+                Country name : Peru
+                Country sub-region: South America
+                Country population :31488700
+            
+script.js:11 
+                Country name : Philippines
+                Country sub-region: South-Eastern Asia
+                Country population :103279800
+            
+script.js:11 
+                Country name : Pitcairn
+                Country sub-region: Polynesia
+                Country population :56
+            
+script.js:11 
+                Country name : Poland
+                Country sub-region: Eastern Europe
+                Country population :38437239
+            
+script.js:11 
+                Country name : Portugal
+                Country sub-region: Southern Europe
+                Country population :10374822
+            
+script.js:11 
+                Country name : Puerto Rico
+                Country sub-region: Caribbean
+                Country population :3474182
+            
+script.js:11 
+                Country name : Qatar
+                Country sub-region: Western Asia
+                Country population :2587564
+            
+script.js:11 
+                Country name : Republic of Kosovo
+                Country sub-region: Eastern Europe
+                Country population :1733842
+            
+script.js:11 
+                Country name : Réunion
+                Country sub-region: Eastern Africa
+                Country population :840974
+            
+script.js:11 
+                Country name : Romania
+                Country sub-region: Eastern Europe
+                Country population :19861408
+            
+script.js:11 
+                Country name : Russian Federation
+                Country sub-region: Eastern Europe
+                Country population :146599183
+            
+script.js:11 
+                Country name : Rwanda
+                Country sub-region: Eastern Africa
+                Country population :11553188
+            
+script.js:11 
+                Country name : Saint Barthélemy
+                Country sub-region: Caribbean
+                Country population :9417
+            
+script.js:11 
+                Country name : Saint Helena, Ascension and Tristan da Cunha
+                Country sub-region: Western Africa
+                Country population :4255
+            
+script.js:11 
+                Country name : Saint Kitts and Nevis
+                Country sub-region: Caribbean
+                Country population :46204
+            
+script.js:11 
+                Country name : Saint Lucia
+                Country sub-region: Caribbean
+                Country population :186000
+            
+script.js:11 
+                Country name : Saint Martin (French part)
+                Country sub-region: Caribbean
+                Country population :36979
+            
+script.js:11 
+                Country name : Saint Pierre and Miquelon
+                Country sub-region: Northern America
+                Country population :6069
+            
+script.js:11 
+                Country name : Saint Vincent and the Grenadines
+                Country sub-region: Caribbean
+                Country population :109991
+            
+script.js:11 
+                Country name : Samoa
+                Country sub-region: Polynesia
+                Country population :194899
+            
+script.js:11 
+                Country name : San Marino
+                Country sub-region: Southern Europe
+                Country population :33005
+            
+script.js:11 
+                Country name : Sao Tome and Principe
+                Country sub-region: Middle Africa
+                Country population :187356
+            
+script.js:11 
+                Country name : Saudi Arabia
+                Country sub-region: Western Asia
+                Country population :32248200
+            
+script.js:11 
+                Country name : Senegal
+                Country sub-region: Western Africa
+                Country population :14799859
+            
+script.js:11 
+                Country name : Serbia
+                Country sub-region: Southern Europe
+                Country population :7076372
+            
+script.js:11 
+                Country name : Seychelles
+                Country sub-region: Eastern Africa
+                Country population :91400
+            
+script.js:11 
+                Country name : Sierra Leone
+                Country sub-region: Western Africa
+                Country population :7075641
+            
+script.js:11 
+                Country name : Singapore
+                Country sub-region: South-Eastern Asia
+                Country population :5535000
+            
+script.js:11 
+                Country name : Sint Maarten (Dutch part)
+                Country sub-region: Caribbean
+                Country population :38247
+            
+script.js:11 
+                Country name : Slovakia
+                Country sub-region: Eastern Europe
+                Country population :5426252
+            
+script.js:11 
+                Country name : Slovenia
+                Country sub-region: Southern Europe
+                Country population :2064188
+            
+script.js:11 
+                Country name : Solomon Islands
+                Country sub-region: Melanesia
+                Country population :642000
+            
+script.js:11 
+                Country name : Somalia
+                Country sub-region: Eastern Africa
+                Country population :11079000
+            
+script.js:11 
+                Country name : South Africa
+                Country sub-region: Southern Africa
+                Country population :55653654
+            
+script.js:11 
+                Country name : South Georgia and the South Sandwich Islands
+                Country sub-region: South America
+                Country population :30
+            
+script.js:11 
+                Country name : Korea (Republic of)
+                Country sub-region: Eastern Asia
+                Country population :50801405
+            
+script.js:11 
+                Country name : South Sudan
+                Country sub-region: Middle Africa
+                Country population :12131000
+            
+script.js:11 
+                Country name : Spain
+                Country sub-region: Southern Europe
+                Country population :46438422
+            
+script.js:11 
+                Country name : Sri Lanka
+                Country sub-region: Southern Asia
+                Country population :20966000
+            
+script.js:11 
+                Country name : Sudan
+                Country sub-region: Northern Africa
+                Country population :39598700
+            
+script.js:11 
+                Country name : Suriname
+                Country sub-region: South America
+                Country population :541638
+            
+script.js:11 
+                Country name : Svalbard and Jan Mayen
+                Country sub-region: Northern Europe
+                Country population :2562
+            
+script.js:11 
+                Country name : Swaziland
+                Country sub-region: Southern Africa
+                Country population :1132657
+            
+script.js:11 
+                Country name : Sweden
+                Country sub-region: Northern Europe
+                Country population :9894888
+            
+script.js:11 
+                Country name : Switzerland
+                Country sub-region: Western Europe
+                Country population :8341600
+            
+script.js:11 
+                Country name : Syrian Arab Republic
+                Country sub-region: Western Asia
+                Country population :18564000
+            
+script.js:11 
+                Country name : Taiwan
+                Country sub-region: Eastern Asia
+                Country population :23503349
+            
+script.js:11 
+                Country name : Tajikistan
+                Country sub-region: Central Asia
+                Country population :8593600
+            
+script.js:11 
+                Country name : Tanzania, United Republic of
+                Country sub-region: Eastern Africa
+                Country population :55155000
+            
+script.js:11 
+                Country name : Thailand
+                Country sub-region: South-Eastern Asia
+                Country population :65327652
+            
+script.js:11 
+                Country name : Timor-Leste
+                Country sub-region: South-Eastern Asia
+                Country population :1167242
+            
+script.js:11 
+                Country name : Togo
+                Country sub-region: Western Africa
+                Country population :7143000
+            
+script.js:11 
+                Country name : Tokelau
+                Country sub-region: Polynesia
+                Country population :1411
+            
+script.js:11 
+                Country name : Tonga
+                Country sub-region: Polynesia
+                Country population :103252
+            
+script.js:11 
+                Country name : Trinidad and Tobago
+                Country sub-region: Caribbean
+                Country population :1349667
+            
+script.js:11 
+                Country name : Tunisia
+                Country sub-region: Northern Africa
+                Country population :11154400
+            
+script.js:11 
+                Country name : Turkey
+                Country sub-region: Western Asia
+                Country population :78741053
+            
+script.js:11 
+                Country name : Turkmenistan
+                Country sub-region: Central Asia
+                Country population :4751120
+            
+script.js:11 
+                Country name : Turks and Caicos Islands
+                Country sub-region: Caribbean
+                Country population :31458
+            
+script.js:11 
+                Country name : Tuvalu
+                Country sub-region: Polynesia
+                Country population :10640
+            
+script.js:11 
+                Country name : Uganda
+                Country sub-region: Eastern Africa
+                Country population :33860700
+            
+script.js:11 
+                Country name : Ukraine
+                Country sub-region: Eastern Europe
+                Country population :42692393
+            
+script.js:11 
+                Country name : United Arab Emirates
+                Country sub-region: Western Asia
+                Country population :9856000
+            
+script.js:11 
+                Country name : United Kingdom of Great Britain and Northern Ireland
+                Country sub-region: Northern Europe
+                Country population :65110000
+            
+script.js:11 
+                Country name : United States of America
+                Country sub-region: Northern America
+                Country population :323947000
+            
+script.js:11 
+                Country name : Uruguay
+                Country sub-region: South America
+                Country population :3480222
+            
+script.js:11 
+                Country name : Uzbekistan
+                Country sub-region: Central Asia
+                Country population :31576400
+            
+script.js:11 
+                Country name : Vanuatu
+                Country sub-region: Melanesia
+                Country population :277500
+            
+script.js:11 
+                Country name : Venezuela (Bolivarian Republic of)
+                Country sub-region: South America
+                Country population :31028700
+            
+script.js:11 
+                Country name : Viet Nam
+                Country sub-region: South-Eastern Asia
+                Country population :92700000
+            
+script.js:11 
+                Country name : Wallis and Futuna
+                Country sub-region: Polynesia
+                Country population :11750
+            
+script.js:11 
+                Country name : Western Sahara
+                Country sub-region: Northern Africa
+                Country population :510713
+            
+script.js:11 
+                Country name : Yemen
+                Country sub-region: Western Asia
+                Country population :27478000
+            
+script.js:11 
+                Country name : Zambia
+                Country sub-region: Eastern Africa
+                Country population :15933883
+            
+script.js:11 
+                Country name : Zimbabwe
+                Country sub-region: Eastern Africa
+                Country population :14240168
+            

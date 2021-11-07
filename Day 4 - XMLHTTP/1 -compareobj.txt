@@ -1,0 +1,61 @@
+QUESTION:
+
+CODE:
+
+How to compare two JSON have the same properties without order?
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+
+
+-------------------------------<index.html>------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <!-- lodash.js is downloaded and placed in current folder -->
+  <script src="./lodash.js"></script>
+  <script src="./script.js"></script>
+ 
+  
+</html>
+
+
+-------------------------------<script.js>------------------------
+
+let obj1={
+    name:"Person1",
+    age:"20"
+};
+let obj2 ={
+    age:"20",
+    name:"Person1"
+};
+
+console.log(_.isEqual(obj1,obj2))
+
+
+let obj3={
+    name:"Person1",
+    age:"20"
+};
+let obj4 ={
+    age:"22",
+    name:"Person2"
+};
+
+console.log(_.isEqual(obj3,obj4))
+
+
+
+OUTPUT:
+
+
+script.js:36 true
+script.js:48 false
+
