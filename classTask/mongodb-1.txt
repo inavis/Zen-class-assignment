@@ -1,0 +1,9 @@
+TASK:
+
+Delete all movies with rating 8.6
+db.movies.deleteMany({"rating":8.6})
+
+
+
+Update the rating of jai bhim to 9
+db.movies.update({ "name": "Jai Bhim"} , { "$set": {"rating": 9}})
