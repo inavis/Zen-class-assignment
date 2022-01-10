@@ -1,0 +1,13 @@
+//QUERY PARAMETER
+app.get("/movies",(request,response)=>{
+
+    const {languages,ratings} = request.query
+    const ratingsnum = +ratings;
+
+    console.log(request.query,languages,ratings,ratingsnum)
+   
+    languages===undefined && ratings===undefined?response.send(movies):
+    languages===undefined && ratings.length>0?response.send(movies.filter(({rating})=>rating===ratingsnum)):
+    ratings===undefined && languages.length>0?response.send(movies.filter(({language})=>language===languages)):
+    response.send(movies.filter(({language})=>language===languages).filter(({rating})=>rating===ratingsnum))
+})
