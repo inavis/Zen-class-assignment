@@ -1,0 +1,107 @@
+BEGIN TRANSACTION;
+
+-- create a table
+create table users (id integer(40), name varchar(50), batch varchar(40));
+insert into users values (1,"Ashish","B27WD");
+insert into users values (2,"Preetha","B26WD");
+insert into users values (3,"Zen","B28WE");
+insert into users values (4,"Neetha","B29WD");
+insert into users values (5,"Chris","B27WE");
+insert into users values (6,"Nashil","B29WE");
+insert into users values (7,"Rashi","B29WD");
+
+-- select * from users;
+
+create table codekata (username varchar(50),problems_solved integer(40));
+insert into codekata values ("Preetha",30);
+insert into codekata values ("Ashish",20);
+insert into codekata values ("Chris",50);
+insert into codekata values ("Nashil",48);
+insert into codekata values ("Neetha",62);
+insert into codekata values ("Rashi",57);
+insert into codekata values ("Zen",44);
+
+-- select * from codekata;
+
+-- select sum(problems_solved) as total_of_solved_problems from codekata;
+
+create table attendance (username varchar(50), attendance_percentage integer(30));
+insert into attendance values ("Preetha",89);
+insert into attendance values ("Zen",100);
+insert into attendance values ("Ashish",93);
+insert into attendance values ("Rashi",67);
+insert into attendance values ("Chris",53);
+insert into attendance values ("Neetha",100);
+insert into attendance values ("Nashil",100);
+
+-- select * from attendance;
+
+create table topics (topic_name varchar(100),problems_in_topic integer(50));
+insert into topics values ("js-numbers",25);
+insert into topics values ("js-array",30);
+insert into topics values ("js-string",50);
+insert into topics values ("js-advanced",40);
+insert into topics values ("html-basic",100);
+insert into topics values ("html-advanced",80);
+
+-- select * from topics;
+
+
+create table tasks (task_name varchar(60),task_category varchar(60) ,task_description varchar(200));
+insert into tasks values ("Read and analyze","Introduction","Perform tasks in https://docs.google.com/document/d/1QznT1zM4mI6dG0TODx5Xjs1GquMoSHO3xZ1USDnVM-w/edit?usp=sharing");
+insert into tasks values ("Practise","JS","Practise problems in codekata");
+insert into tasks values ("tags","Html","all input elements in html");
+insert into tasks values ("design webpage","CSS","Create a  advertisement poster");
+insert into tasks values ("API","react","Perform all CRUD operations and use mockAPI");
+
+-- select * from tasks;
+
+create table company_drives (company_name varchar(100),student_name varchar(100));
+insert into company_drives values ("RazorPay","Ashish");
+insert into company_drives values ("Paypal","Ashish");
+insert into company_drives values ("RazorPay","Chris");
+insert into company_drives values ("RazorPay","Neetha");
+insert into company_drives values ("Paypal","Preetha");
+insert into company_drives values ("zoho","Ashish");
+insert into company_drives values ("zoho","Rashi");
+insert into company_drives values ("zoho","Neetha");
+insert into company_drives values ("zoho","Nashil");
+
+-- select * from company_drives;
+
+-- select count(company_name),student_name from company_drives group by student_name;
+
+
+create table mentors (mentor_name varchar(100),student varchar(100));
+insert into mentors values("lavanya","Preetha");
+insert into mentors values("lavanya","Zen");
+insert into mentors values ("lavanya","Ashish");
+insert into mentors values ("Ash","Rashi");
+insert into mentors values ("Akshay","Chris");
+
+-- select distinct mentor_name from mentors;
+
+-- select count(mentor_name),mentor_name from mentors group by mentor_name;
+
+
+-- select * from mentors;
+
+create table students_activated_courses (studentname varchar(100), coursename varchar(100));
+insert into students_activated_courses values ("Ashish","HTML");
+insert into students_activated_courses values ("Chris","Python");
+insert into students_activated_courses values ("Preetha","Full stack development");
+insert into students_activated_courses values ("Neetha","Python");
+insert into students_activated_courses values ("Zen","HTML");
+
+-- select * from students_activated_courses;
+
+create table courses (course_id integer(50),course_name varchar(100));
+insert into courses values (1,"Full stack development");
+insert into courses values (2,"HTML");
+insert into courses values (3,"Python");
+insert into courses values (4,"ML");
+insert into courses values (2,"Blockchain");
+
+-- select * from courses;
+
+select studentname, coursename, course_id from students_activated_courses left join courses where course_name=coursename;
