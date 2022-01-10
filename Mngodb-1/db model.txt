@@ -1,0 +1,176 @@
+users
+[
+	{
+	  "name":"Ashish",
+	  "email":"ashish@gmail.com",
+	  "password":"asish",
+	  "phone":"9898983989"
+	} ,
+	{
+	  "name":"Reema",
+	  "email":"reema@yahoo.com",
+	  "password":"reema",
+	  "phone":"883838393"
+	} ,
+	{
+	  "name":"Chris",
+	  "email":"chris@gmail..com",
+	  "password":"chris",
+	  "phone":"92353537773"
+	} ,
+
+]
+
+------------------------------------------------------------------------------------------
+
+codekata
+
+[
+	{
+	  "topic":"HTML",
+	  "total":50,
+	  "solved":[{"user":"Reema",problems:2},{"user":"Chris",problems:16}]
+	} ,
+	{
+	  "topic":"CSS",
+	  "total":50,
+	  "solved":[{"user":"Chris",problems:7}]
+	} ,
+	{
+	  "topic":"JS",
+	  "total":150,
+	  "solved":[{"user":"Ashish",problems:72},{"user":"Reema",problems:54},{"user":"Chris",problems:22}]
+	} 	
+]
+
+------------------------------------------------------------------------------------------
+
+attendance
+
+[
+	{
+	  "date":new Date("2020-09-03"),
+	  "batch":"b1",
+	  "persent":[{"name":"Ashish","status":1},{"name":"Reema","status":1}],
+	  "absent":[{"name":"Chris","status":1}]
+	},
+	{
+	  "date":new Date("2020-09-21"),
+	  "batch":"b1",
+	  "persent":[{"name":"Ashish","status":1},{"name":"Reema","status":1},{"name":"Chris","status":1}],
+	  "absent":[]
+	},
+	{
+	  "date":new Date("2020-10-05"),
+	  "batch":"b1",
+	  "persent":[{"name":"Ashish","status":1},{"name":"Chris","status":1}],
+	  "absent":[{"name":"Reema","status":1}]
+	},
+	{
+	  "date":new Date("2020-10-16"),
+	  "batch":"b1",
+	  "persent":[{"name":"Chris","status":1}],
+	  "absent":[{"name":"Ashish","status":1},{"name":"Reema","status":1}]
+	},
+	{
+	  "date":new Date("2020-10-30"),
+	  "batch":"b1",
+	  "persent":[{"name":"Ashish","status":1},{"name":"Reema","status":1},{"name":"Chris","status":1}],
+	  "absent":[]
+	},
+]
+
+------------------------------------------------------------------------------------------
+
+topics
+[
+	{
+	"topic":"topic1",
+	"date":new Date("2020-09-03")
+	},
+	{
+	"topic":"topic2",
+	"date":new Date("2020-09-21")
+	},
+	{
+	"topic":"topic3",
+	"date":new Date("2020-10-05")
+	},
+	{
+	"topic":"topic4",
+	"date":new Date("2020-10-16")
+	},
+	{
+	"topic":"topic5",
+	"date":new Date("2020-10-30")
+	},
+]
+
+------------------------------------------------------------------------------------------
+
+tasks
+
+[
+	{
+	"task":"topic2",
+	"date":new Date("2020-09-21"),
+	"submitted":[{"name":"Ashish","status":1},{"name":"Reema","status":1},{"name":"Chris","status":1}],
+	"missed":[]
+	} ,
+	{
+	"task":"topic3",
+	"date":new Date("2020-10-05"),
+	"submitted":[{"name":"Reema","status":1},{"name":"Chris","status":1}],
+	"missed":[{"name":"Ashish","status":1}]
+	} ,
+	{
+	"task":"topic5",
+	"date":new Date("2020-10-30"),
+	"submitted":[{"name":"Chris","status":1}],
+	"missed":[{"name":"Ashish","status":1},{"name":"Reema","status":1}]
+	} 
+	
+]
+
+------------------------------------------------------------------------------------------
+
+company_drives
+
+[
+	{
+	"name":"CompanyA",
+	"date":new Date("2020-09-27"),
+	"attended":[{"student":"Ashish"}]
+	} ,
+	{
+	"name":"CompanyB",
+	"date":new Date("2020-10-17"),
+	"attended":[{"student":"Ashish"},{"student":"Reema"},{"student":"Chris"}]
+	} ,
+	{
+	"name":"CompanyC",
+	"date":new Date("2020-10-31"),
+	"attended":[{"student":"Chris"},{"student":"Reema"}]
+	} ,
+]
+
+------------------------------------------------------------------------------------------
+
+mentors
+
+[
+	{
+	"mentor":"Mentor1",
+	"students":20
+	} , 
+	{
+	"mentor":"Mentor2",
+	"students":12
+	} , 
+	{
+	"mentor":"Mentor3",
+	"students":25
+	} 
+]
+
+------------------------------------------------------------------------------------------
